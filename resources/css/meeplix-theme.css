@@ -1,0 +1,201 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins/Poppins-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter/Inter-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== Meeplix Theme Variables ===== */
+:root {
+  --bs-primary: #26A9E0;
+  --bs-primary-hover: #1E90C4;
+  --bs-secondary-dark: #115E89;
+  --bs-secondary-light: #dddddd;
+  --bs-background: #26A9E0;
+  --bs-background-light: #F0F2F5;
+  --bs-surface: #FFFFFF;
+  --bs-text: #1C1E21;
+  --bs-text-secondary: #FFF;
+  --bs-muted: #5E6E7E;
+  --bs-border: #DADDE1;
+  --bs-background-dark: #0D1B2A;
+  --bs-navbar-color: #F0F2F5;
+
+  --color-primary: #26A9E0;
+  --color-primary-hover: #1E90C4;
+  --color-secondary-dark: #115E89;
+  --color-secondary-light: #dddddd;
+  --color-secondary-hover: #a19f9f;
+  --color-background: #26A9E0;
+  --color-background-light: #F0F2F5;
+  --color-surface: #FFFFFF;
+  --color-text: #1C1E21;
+  --color-text-secondary: #FFF;
+  --color-muted: #5E6E7E;
+  --color-border: #DADDE1;
+  --color-background-dark: #0D1B2A;
+
+  --font-title: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ===== Global Styles ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background-light);
+  color: var(--color-secondary-dark);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-title);
+  color: var(--color-secondary-dark);
+  margin-bottom: 0.5em;
+}
+
+.main-boardgame {
+  height: calc(100vh - 58px); /* Adjust height to fit the viewport */
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-boardgame-settings {
+  height: calc(100vh); /* Adjust height to fit the viewport */
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+
+.title {
+  color: var(--color-text-secondary);
+  font-family: var(--font-title);
+  font-weight: 700;
+}
+
+/* ===== Texts ===== */
+.text-primary {
+  color: var(--color-primary) !important;
+}
+.text-secondary-light {
+  color: var(--color-text-secondary) !important;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  padding: .375rem .75rem;
+  font-weight: 400;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-family: var(--font-body);
+  font-family: var(--font-title);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+
+.btn-secondary {
+    background-color: var(--color-secondary-light);
+    color: var(-bs-secondary-dark);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary-hover);
+}
+
+.action-buttons {
+    display: flex;
+        justify-content: space-evenly;
+    margin-top: 3rem;
+}
+/* ===== Containers ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+/* ===== Navbar ===== */
+.navbar.bg-light {
+  background-color: var(--color-background) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.navbar.bg-light .nav-link {
+  color: var(--color-text-secondary) !important;
+  font-weight: 500;
+}
+
+.navbar-toggler {
+  border-color: white; /* optionnel : contour du bouton */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* ===== Cards or Panels ===== */
+.card {
+  background-color: white;
+  border-radius: 0.75em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1.5em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.card-img-top-wrapper {
+  height: 200px; /* Hauteur maximale souhaitée */
+  overflow: hidden;
+}
+
+.card-img-top {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ===== Links ===== */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,238 @@
+#cty_header_dice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 1rem;
+}
+/* Ligne contenant 2 dés (ou 1) */
+.dice-row {
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.die-list {
+    /* height: 6rem; */
+    height: 150px;
+    list-style-type: none;
+    /* padding: 20px; */
+    position: relative;
+    transform-style: preserve-3d;
+    /* width: 6rem; */
+    width: 150px;
+    padding-left: 0px;
+}
+
+.die-item {
+    background-color: #000;
+    height: 150px;
+    position: absolute;
+    width: 150px
+}
+
+/* Découpe les dés en fonction de l'image (sprite) */
+.bg-die_1_1 {
+    background: url('../../images/boardgames/mcrw/dice2.png') 0 0;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_1_2 {
+    background: url('../../images/boardgames/mcrw/dice2.png') -150px 0;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_1_3 {
+    background: url('../../images/boardgames/mcrw/dice2.png') 0 -150px;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_1_4 {
+    background: url('../../images/boardgames/mcrw/dice2.png') -150px -150px;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_1_5 {
+    background: url('../../images/boardgames/mcrw/dice2.png') -300px 0;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_1_6 {
+    background: url('../../images/boardgames/mcrw/dice2.png') -300px -150px;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_2_1 {
+    background: url('../../images/boardgames/mcrw/dice2.png') 0 -300px;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_2_2 {
+    background: url('../../images/boardgames/mcrw/dice2.png') -150px -300px;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_2_3 {
+    background: url('../../images/boardgames/mcrw/dice2.png') -300px -300px;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_2_4 {
+    background: url('../../images/boardgames/mcrw/dice2.png') -450px 0;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_2_5 {
+    background: url('../../images/boardgames/mcrw/dice2.png') -450px -150px;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_2_6 {
+    background: url('../../images/boardgames/mcrw/dice2.png') -450px -300px;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_3_1 {
+    background: url('../../images/boardgames/mcrw/dice2.png') 0 -450px;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_3_2 {
+    background: url('../../images/boardgames/mcrw/dice2.png') -150px -450px;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_3_3 {
+    background: url('../../images/boardgames/mcrw/dice2.png') -300px -450px;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_3_4 {
+    background: url('../../images/boardgames/mcrw/dice2.png') -450px -450px;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_3_5 {
+    background: url('../../images/boardgames/mcrw/dice2.png') -600px 0;
+    height: 150px;
+    width: 150px
+}
+
+.bg-die_3_6 {
+    background: url('../../images/boardgames/mcrw/dice2.png') -600px -150px;
+    height: 150px;
+    width: 150px
+}
+
+/* Permet de mettre les dés dans le bon sens (point gris contre point gris) */
+[data-side="1"] {
+    transform: rotate3d(0,0,0,90deg) translateZ(75px)
+}
+
+[data-side="2"] {
+    transform: rotate3d(-1,0,0,90deg) translateZ(75px)
+}
+
+[data-side="3"] {
+    transform: rotateY(90deg) translateZ(75px)
+}
+
+[data-side="4"] {
+    transform: rotate3d(0,-1,0,90deg) translateZ(75px)
+}
+
+[data-side="5"] {
+    transform: rotateX(90deg) translateZ(75px)
+}
+
+[data-side="6"] {
+    transform: rotateX(180deg) translateZ(75px)
+}
+
+
+/* Utilisé pour faire tourner les dés */
+.even-roll {
+    transition: transform 1.5s ease-out
+}
+
+.odd-roll {
+    transition: transform 1.25s ease-out
+}
+    
+.even-roll[data-roll="1"] {
+    transform: rotateX(1turn) rotateY(2turn) rotate(1turn)
+}
+
+.even-roll[data-roll="2"] {
+    transform: rotateX(450deg) rotateY(2turn) rotate(1turn)
+}
+
+.even-roll[data-roll="3"] {
+    transform: rotateX(1turn) rotateY(630deg) rotate(1turn)
+}
+
+.even-roll[data-roll="4"] {
+    transform: rotateX(1turn) rotateY(810deg) rotate(1turn)
+}
+
+.even-roll[data-roll="5"] {
+    transform: rotateX(270deg) rotateY(2turn) rotate(1turn)
+}
+
+.even-roll[data-roll="6"] {
+    transform: rotateX(1turn) rotateY(900deg) rotate(1turn)
+}
+
+.odd-roll[data-roll="1"] {
+    transform: rotateX(-1turn) rotateY(-2turn) rotate(-1turn)
+}
+
+.odd-roll[data-roll="2"] {
+    transform: rotateX(-270deg) rotateY(-2turn) rotate(-1turn)
+}
+
+.odd-roll[data-roll="3"] {
+    transform: rotateX(-1turn) rotateY(-810deg) rotate(-1turn)
+}
+
+.odd-roll[data-roll="4"] {
+    transform: rotateX(-1turn) rotateY(-630deg) rotate(-1turn)
+}
+
+.odd-roll[data-roll="5"] {
+    transform: rotateX(-450deg) rotateY(-2turn) rotate(-1turn)
+}
+
+.odd-roll[data-roll="6"] {
+    transform: rotateX(-1turn) rotateY(-900deg) rotate(-1turn)
+}
+
+/* Responsive mobile : vertical en dessous de 768px */
+/* Responsive : les 2 premiers restent côte à côte, le 3e en dessous */
+@media screen and (min-width: 769px) {
+    #cty_header_dice {
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: 150px;
+    }
+    .dice-row {
+        flex-direction: row;
+    }
+}
